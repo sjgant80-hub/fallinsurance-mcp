@@ -1,0 +1,37 @@
+{
+  "name": "@ai-native-solutions/fallinsurance-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for FallInsurance — UK GI broker toolkit exposed as stdio tools + resources.",
+  "type": "module",
+  "main": "src/server.js",
+  "bin": {
+    "fallinsurance-mcp": "bin/fallinsurance-mcp.js"
+  },
+  "files": [
+    "src",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "insurance",
+    "uk",
+    "fca",
+    "broker"
+  ],
+  "author": "AI-Native Solutions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sjgant80-hub/fallinsurance-mcp.git"
+  },
+  "dependencies": {
+    "@ai-native-solutions/fallinsurance-sdk": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
