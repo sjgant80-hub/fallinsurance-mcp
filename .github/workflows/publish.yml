@@ -1,21 +1,17 @@
-name: publish
+name: Publish
 on:
   push:
     tags: ['v*']
 jobs:
-  npm:
+  publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
-      - name: Publish to npm (best effort)
-        run: |
-          npm publish --access public --provenance || echo "publish skipped (no NPM_TOKEN or version already exists)"
+      - name: Publish
+        run: npm publish --access public || echo "npm publish skipped (NPM_TOKEN missing or version exists)"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
